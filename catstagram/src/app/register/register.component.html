@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <h1 style="font-family: Brush Script MT; text-align: center;">Catstagram</h1>
+                <div class="form-group">
+                    <label for="example:Darian23">Username</label>
+                    <input type="text" class="form-control" formControlName="username">
+                </div>
+                <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+                    This field is required!
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+                <!--this condition what is contain in ngIf it is same like that below-->
+                <div *ngIf="registerForm.controls['email'].touched && registerForm.controls['email'].invalid" class="alert alert-danger">
+                    This field it is required!
+                </div>
+                <div class="form-group">
+                    <label >Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+                <!--this declaration of ngIf it is the same as that above-->
+                <div *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+                    This field it is required!
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+</div>

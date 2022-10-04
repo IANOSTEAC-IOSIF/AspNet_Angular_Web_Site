@@ -1,0 +1,29 @@
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color:white">
+    <img src="http://localhost:4200/assets/image/th.ico" style="width:4%; margin-right: 35%;" alt="" >
+    <h1 class="h1-modif" style="text-align:center;margin-right: 30%">Catstagram</h1>
+
+    <button class="btn btn-primary" style="background-color:rgb(224, 169, 116)" routerLink="/create">Add
+        Cats</button>
+    <button class="btn btn-primary" style="background-color:rgb(224, 169, 116)" (click)="logOut()">Log
+        out</button>
+</header>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xs-4 " *ngFor="let cat of cats">
+            <div class="card space-add" style="width: 18rem;">
+                <img [src]="cat.imageUrl" class="card-img-top" alt="..." style="height: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{cat.id}}</h5>
+                    <p class="card-text">{{cat.description}}</p>
+
+                    <button routerLink="/cats/{{cat.id}}" class="btn btn-primary demoColor" style="padding:2mm">See Cat
+                        info</button>
+                    <button class="btn btn-warning demoColor" (click)="editCat(cat.id)">Edit</button>
+                    <button class="btn btn-danger demoColor" (click)="deleteCat(cat.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+
+
+:root{
+    --form-border: 1px solid gray;
+    --form-padding:10% 15%;
+    --form-margin-top:20%;
+    --form-background-color:#d8c395;
+
+}
+
+
+form{
+    border: var(--form-border);
+    padding: var(--form-padding);
+    margin-top:var(--form-margin-top);
+    background-color:var(--form-background-color);
+}
+ body{
+
+    background-color:rgba(24, 23, 23, 0.658);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% 100%;
+
+}
+.demoColor{
+    background-color:var(--form-background-color);
+}
+.h1-modif{
+    font-family: 'Brush Script MT';
+    text-align: center;
+}
